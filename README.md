@@ -17,3 +17,4 @@ People who are interested can sign up can see what are the events that are happe
 Connections page contains different kinds of sports events and the connetion page has all the detailed description of those events and optin to choose whether they are interested to participate in that event or not.
 
 New connections can be added by the user they can modify and delete/update the connections that are rsvp'ed.
+
