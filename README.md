@@ -18,3 +18,7 @@ Connections page contains different kinds of sports events and the connetion pag
 
 New connections can be added by the user they can modify and delete/update the connections that are rsvp'ed.
 
+# Database
+
+MongoDB is used. Sports_meet_create_db contains the tables that are information related to tables. 
+
