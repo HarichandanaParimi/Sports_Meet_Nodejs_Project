@@ -1,0 +1,178 @@
+use sportsmeet
+db.createCollection("users")
+db.createCollection("connections")
+db.createCollection("userprofile")
+
+--------------------------------------------------------------------------
+For username Hari Password before hashing is ABCabc123!
+For username Chandana Password before hashing is ABCabc1234!
+
+--------------------------------------users-------------------------------
+
+db.users.insert([
+         {
+          "_userId":"Hari",
+          "_password": "3edf35881cb2fe94907ab66b2033dbb4f0894772a2ab6d71b7cd10992436f26e8f62106aabbf5298dd2a6112a9577e176943ddbeda1a45cfd1304cd54fdee140",
+          "_salt": "d79c152b54",
+          "_firstName":"Chandana",
+          "_lastName":"Parimi",
+          "_emailAddress":"chandana@gmail.com",
+          "_address_1":"Barton Creek Drive",
+          "_address_2":"220 Apt E",
+          "_city":"charlotte",
+          "_state":"NC",
+          "_country":"USA",
+          "_zipCode":"28262"
+         },{
+          "_userId":"Chandana",
+          "_password":"ad97de831291fd4fdb46b8f257d17d87a23cbba85f81ffe3832c93fa0fa5c6e886ac28b36510f0f6594b32ecccb2b3787417ce943be38c34df845eccbf722b69",
+          "_salt":"701dfef1e53",
+          "_firstName":"Hari",
+          "_lastName":"Parimi",
+          "_emailAddress":"hari@gmail.com",
+          "_address_1":"Barton Creek Drive",
+          "_address_2":"216 Apt F",
+          "_city":"charlotte",
+          "_state":"charlotte",
+          "_country":"USA",
+          "_zipCode":"28262"
+         }
+       ]);
+
+----------------------userconnections(New connections are added here)------------------------------------------------
+
+db.connections.insert([
+         {
+          "_userId":"Hari",
+          "_connectionID":1,
+          "_connectionName":"Charlottes Chess Event",
+          "_category":"chess",
+          "_date":"16 October 2019",
+          "_time":"04:00pm to 09:00pm",
+          "_image":"../assets/images/chess1.png",
+          "_host":"Hari Chandana",
+          "_details":"This is a well known club which organises this king of events twice in a month. People play with differrnt group of players"
+         },{
+          "_userId":"Chandana",
+          "_connectionID":2,
+          "_connectionName":"UNCC Chess Event",
+          "_category":"chess",
+          "_date":"Oct 30th 2019",
+          "_time":"04:00pm to 09:00pm",
+          "_image":"../assets/images/chess1.png",
+          "_host":"keerthi",
+          "_details":"This event is organised in the UNCC premises. Players who are interested to participate can take a part of the event"
+         },{
+          "_userId":"Hari",
+          "_connectionID":3,
+          "_connectionName":"Niner Chess Competition",
+          "_category":"chess",
+          "_date":"16 October 2019",
+          "_time":"04:00pm to 09:00pm",
+          "_image":"../assets/images/chess1.png",
+          "_host":"Ajay",
+          "_details":"This is a sports meet where all the niners can participate in this competition if they are interested"
+         },{
+          "_userId":"Chandana",
+          "_connectionID":4,
+          "_connectionName":"Home coming Flag Football Tournament",
+          "_category":"Football",
+          "_date":"16 October 2019",
+          "_time": "04:00pm to 09:00pm",
+          "_image":"../assets/images/football1.jpg",
+          "_host":"Akshay",
+          "_details":"This is a Home coming Flag Football Tournament. Participate in the event"
+         },{
+          "_userId":"Hari",
+          "_connectionID":5,
+          "_connectionName":"Greensboro Eagles Elite Football",
+          "_category":"Football",
+          "_date":"16 October 2019",
+          "_time":"04:00pm to 09:00pm",
+          "_image":"../assets/images/football1.jpg",
+          "_host":"Anjali",
+          "_details":"This is a footaball event which hapens every year. Participate in the event to play with new palyers"
+         },{
+          "_userId":"Chandana",
+          "_connectionID":6,
+          "_connectionName": "49er Football Event",
+          "_category":"Football",
+          "_date":"16 October 2019",
+          "_time":"04:00pm to 09:00pm",
+          "_image":"../assets/images/football1.jpg",
+          "_host":"Chandana Parimi",
+          "_details":"This event is organised by the 49ers once in six months. Participate if you are interested"
+         }
+        ])
+----------------------------userprofile(new connections,rsvp or updated rsvp actions are refleccted here)------------------------------------------
+
+db.userprofile.insert([
+{"_userId":"Hari",
+"_userconnectionList": [{
+"_connectionID":1,
+"_connectionName":"Charlottes Chess Event",
+"_category":"chess",
+"_date":"16 October 2019",
+"_time":"04:00pm to 09:00pm",
+"_image":"../assets/images/chess1.png",
+"_host":"Hari Chandana",
+"_details":"This is a well known club which organises this king of events twice in a month. People play with differrnt group of players",
+"_rsvp":"Yes"
+},	
+{
+"_connectionID":6,
+"_connectionName": "49er Football Event",
+"_category":"Football",
+"_date":"16 October 2019",
+"_time":"04:00pm to 09:00pm",
+"_image":"../assets/images/football1.jpg",
+"_host":"Chandana Parimi",
+"_details":"This event is organised by the 49ers once in six months. Participate if you are interested",
+"_rsvp":"Yes"
+},
+{"_connectionID":2,
+"_connectionName":"UNCC Chess Event",
+"_category":"chess",
+"_date":"Oct 30th 2019",
+"_time":"04:00pm to 09:00pm",
+"_image":"../assets/images/chess1.png",
+"_host":"keerthi",
+"_details":"This event is organised in the UNCC premises. Players who are interested to participate can take a part of the event",
+"_rsvp":"No"
+}]},
+{ "_userId":"Chandana",
+"_userconnectionList":[
+{
+"_connectionID":4,
+"_connectionName":"Home coming Flag Football Tournament",
+"_category":"Football",
+"_date":"16 October 2019",
+"_time":"04:00pm to 09:00pm",
+"_image":"../assets/images/football1.jpg",
+"_host":"Akshay",
+"_details":"This is a Home coming Flag Football Tournament. Participate in the event",
+"_rsvp":"MayBe"
+},
+{
+"_connectionID":3,
+"_connectionName":"Niner Chess Competition",
+"_category":"chess",
+"_date":"16 October 2019",
+ "_time":"04:00pm to 09:00pm",
+"_image":"../assets/images/chess1.png",
+"_host":"Ajay",
+"_details":"This is a sports meet where all the niners can participate in this competition if they are interested",
+"_rsvp":"No"
+},
+{
+"_connectionID":5,
+"_connectionName":"Greensboro Eagles Elite Football",
+"_category":"Football",
+"_date":"16 October 2019",
+"_time":"04:00pm to 09:00pm",
+"_image":"../assets/images/football1.jpg",
+"_host":"Anjali",
+"_details":"This is a footaball event which hapens every year. Participate in the event to play with new palyers",
+"_rsvp":"Yes"}]}])
+
+----------------------------------------------------------------------------------------

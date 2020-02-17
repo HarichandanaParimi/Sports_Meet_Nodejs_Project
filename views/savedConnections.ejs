@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Saved Connections</title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
+</head>
+ <body>
+	<% if(userspecificnavFlag == 0) { %>
+	<% include partials/header.ejs %>
+	<% include partials/navigation.ejs %>
+	<% } else if (userspecificnavFlag == 1) { %>
+	<% include partials/header2.ejs %>
+	<% include partials/navigation2.ejs %>
+	<% } %>
+	<main>
+			<h4><%= userProfile._firstName %> Connections</h4>
+				<table class='tablestyle'>
+					<tr>
+					 <th>Connection</th>
+					 <th>Category</th>
+					 <th>Play??</th>
+					 <th></th>
+				 </tr>
+				 <% userconnections.forEach(function(connection) { %>
+				 <tr>
+					  <% if(connection._connectionName){%>
+					<td><%= connection._connectionName %></td>
+				    <td><%=connection._category %></td>
+				    <td><%=connection._rsvp %></td>
+				    <td> <button onclick="window.location.href='/Connection?id=<%= connection._connectionID %>'">Update</button><button onclick="window.location.href='/savedConnections/delete?id=<%= connection._connectionID %>'">Delete</button></td>
+				 </tr>
+				 <% }}) %>
+				</table>
+	</main>
+  <% include partials/footer.ejs %>
+ </body>
+</html>

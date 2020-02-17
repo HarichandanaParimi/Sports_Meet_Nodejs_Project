@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> About </title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
+</head>
+<body>
+	<% if(userspecificnavFlag == 0) { %>
+	<% include partials/header.ejs %>
+	<% include partials/navigation.ejs %>
+	<% } else if (userspecificnavFlag == 1) { %>
+	<% include partials/header2.ejs %>
+	<% include partials/navigation2.ejs %>
+	<% } %>
+	<main>
+		<h4> About Sports meet </h4>
+          <p>Sports meet was started in the year 2019 with help an d support of the charlotte sports Club</p>
+          <p> This meet ups are used to connect to new players and to participate in varipus competitios that are taking place all around the state </p>
+	</main>
+  <% include partials/footer.ejs %>
+ </body>
+</html>

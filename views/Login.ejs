@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang ="en">
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
+</head>
+<body>
+  <% if(userspecificnavFlag == 0) { %>
+	<% include partials/header.ejs %>
+	<% include partials/navigation.ejs %>
+	<% } else if (userspecificnavFlag == 1) { %>
+	<% include partials/header2.ejs %>
+	<% include partials/navigation2.ejs %>
+	<% } %>
+	<main>
+		<div class="container2">
+		  <h1> Welcome to Sportsmeet Connections</h1>
+      <p> Please enter your password and username <p>
+		</div>
+    <% if (errorMessage){ %>
+          <h3 id="error_head"> <%= errorMessage%> </h3>
+        <% } %>
+    <form class="formclass-new" method='post' action="/login">
+      <table class="tableprop">
+        <tr>
+          <td class="td1style">  <p> username </p> </td>
+          <td class="td2style"> <input name="username"  type="text" class="inputstyle"  required> </td>
+        </tr>
+          <tr>
+            <td class="td1style"> <p> password </p> </td>
+            <td class="td2style"> <input name="password" type="password" class="inputstyle"  required> </td>
+          </tr>
+        <tr>
+          <td class="td1style">  </td>
+          <td class="td2style"> <input type="Submit" value="login"  class="submitstyle" /> </td>
+        </tr>
+      </table>
+    </form>
+    <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p>
+	</main>
+	<% include partials/footer.ejs %>
+</body>
+</html>

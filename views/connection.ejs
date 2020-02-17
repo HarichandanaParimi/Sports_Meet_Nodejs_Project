@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Connection</title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
+</head>
+<body>
+	<% if(userspecificnavFlag == 0) { %>
+	<% include partials/header.ejs %>
+	<% include partials/navigation.ejs %>
+	<% } else if (userspecificnavFlag == 1) { %>
+	<% include partials/header2.ejs %>
+	<% include partials/navigation2.ejs %>
+	<% } %>
+	<main>
+			<form method ='post'>
+				<div class="row">
+				<div class="column">
+			<h3> <%= connDetails._connectionName %></h3>
+			 </div>
+			<div class="column">
+				<p> Do you want to connect??</p>
+				<input class="yesbutton" type="submit" value="Yes" formaction="/savedConnections?rsvp=Yes&id=<%= connDetails._connectionID %>">
+				<input class="nobutton" type="submit" value="No" formaction="/savedConnections?rsvp=No&id=<%= connDetails._connectionID %>">
+				<input class="Maybe" type="submit" value="May be" formaction="/savedConnections?rsvp=mayBe&id=<%= connDetails._connectionID %>">
+			</div>
+			</div>
+
+			<div>
+				<img class="imagestyle" src="<%= connDetails._image %>" alt="chess">
+				<p>Hosted by: <%= connDetails._host %></p>
+				<p>Category: <%= connDetails._category %></p>
+				<p><%= connDetails._time %></p>
+				<p><%= connDetails._date %></p>
+			</div>
+    <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p> <p>&nbsp;</p>
+		<div>
+				<h4>Details:</h4>
+				<p><%= connDetails._details %></p>
+			</div>
+		</form>
+	 </main>
+	 <% include partials/footer.ejs %>
+ </body>
+</html>

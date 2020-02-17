@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang ="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
+</head>
+<body>
+  <% if(userspecificnavFlag == 0) { %>
+	<% include partials/header.ejs %>
+	<% include partials/navigation.ejs %>
+	<% } else if (userspecificnavFlag == 1) { %>
+	<% include partials/header2.ejs %>
+	<% include partials/navigation2.ejs %>
+	<% } %>
+	<main>
+		<h4> Sports Meet Contact Details</h4>
+        <p> Sports meet team will always be available to resolve your issues and answer your queries</p>
+        <p> Email: hparimi@sportsmmet.com</p>
+        <p>Mobile No: 5678908907</p>
+        <p> Address: 220 Barton Creek Drive</p> <p> Charlotte</p>
+         <p> North Carolina</p>
+         <p> 28262</p>
+  <% include partials/footer.ejs %>
+</main>
+ </body>
+</html>

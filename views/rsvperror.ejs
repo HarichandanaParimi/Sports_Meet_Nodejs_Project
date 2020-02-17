@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Connection Page </title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
+	<meta charset="utf-8">
+</head>
+<body>
+	<% if(userspecificnavFlag == 0) { %>
+	<% include partials/header.ejs %>
+	<% include partials/navigation.ejs %>
+	<% } else if (userspecificnavFlag == 1) { %>
+	<% include partials/header2.ejs %>
+	<% include partials/navigation2.ejs %>
+	<% } %>
+	<main>
+		<div class="container2">
+	     <h4>please login before you perform this action</h4>
+		</div>
+	 </main>
+	 <% include partials/footer.ejs %>
+ </body>
+</html>
